@@ -153,14 +153,15 @@ function generateParticles(num){
 
 }
 
-function generateEdges(particles){
+// add edges for all geometry
+function generateEdges(geoms){
 
-  particles.forEach( (p) => {
+  geoms.forEach( (g) => {
     // create wireframe
-    var edge = new THREE.EdgesGeometry(geometry);
+    var edge = new THREE.EdgesGeometry(geometry); // create edge for plane geometry
     var edgeMaterial = new THREE.LineBasicMaterial({color: 0x1f1f1f, linewidth: 1});
     var line = new THREE.LineSegments(edge, edgeMaterial);
-    p.add(line);
+    g.add(line);
   });
 
 }
