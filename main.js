@@ -32,7 +32,7 @@ function init(){
   light.position.set(0, 0, 500);
 
   generateParticles(450);
-  //generateEdges(geometries);
+  generateEdges(geometries);
 
   renderer = new THREE.WebGLRenderer({alpha:true, antialias: true});
   renderer.setSize(width, height);
@@ -136,7 +136,7 @@ function generateParticles(num){
     geometry = new Plane();
     geometry.scale( 4, 4, 4);
     // 0xf44b42, 0x41f4a0, 0x4164f4, 0xac41f4, 0xf46741
-    geometries[i] = new THREE.Mesh(geometry, new THREE.MeshPhongMaterial({
+    geometries[i] = new THREE.Mesh(geometry, new THREE.MeshToonMaterial({
 
       color: colors[Math.floor(Math.random() * 6)],
       flatShading: true,
